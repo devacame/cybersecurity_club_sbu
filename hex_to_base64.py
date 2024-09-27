@@ -50,5 +50,3 @@ def hex_to_base64(hex: str | int) -> str:
     Base64_str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
     ans = ''.join([Base64_str[(hex_int  >> (i*6)) & 63] for i in range(len(hex)*2//3, -1, -1)])
     return ans + '='*((4 - len(ans)%4)%4)
-
-print(hex_to_base64('4d'))
